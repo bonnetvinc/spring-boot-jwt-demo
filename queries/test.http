@@ -1,0 +1,50 @@
+### signup to create user
+POST localhost:8080/api/auth/signup
+Content-Type: Application/json
+
+{
+  "username": "admin",
+  "email": "admin@mod.fr",
+  "role": ["admin"],
+  "password": "12345678"
+}
+
+### signin to get token and refresh token
+POST localhost:8080/api/auth/signin
+Content-Type: Application/json
+
+{
+ "username": "admin",
+ "password": "12345678"
+}
+
+### get new token with refresh token
+POST localhost:8080/api/auth/refreshtoken
+Content-Type: Application/json
+
+{
+  "refreshToken": "c6c4ad82-00bd-465f-8b86-ab477040a7fb"
+}
+
+
+
+### GET ALL INFORMATIONS ###
+
+### get without any role needed
+GET localhost:8080/api/test/all
+Content-Type: Application/json
+
+### get with user role
+GET localhost:8080/api/test/user
+Content-Type: Application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNDM0NTI0MiwiZXhwIjoxNjM0MzQ1MzAyfQ.gywip8xmLu_xFL8a90f_vWK_Hy1rie5AQ9PHQCMDksv3gt4QdrwfUiiop8ZCgGK-Rbzf1_X6QuG6HEq-F5Mkqw
+
+### get with user role
+GET localhost:8080/api/test/mod
+Content-Type: Application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE2MzQzNDI3MjEsImV4cCI6MTYzNDM0Mjc4MX0.BCqEwevwztFRf9RQAuaknQKj52LRs1Y7lQ7A4Bw7hoAnZdi2t5SaeRO7HDRSynQJwJwcu-x15bQfeYRv3RJ__A
+
+### get with admin role
+GET localhost:8080/api/test/admin
+Content-Type: Application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNDM0MzA2MiwiZXhwIjoxNjM0MzQzMTIyfQ.e5uVfoWSL05mJtVPERD2Qv1uYz6ahWmk_YkSQaKjJjrOUhWJICsFRTIyG3GzFM-6DLqNr_HBPE1bJ4qSnj4Ssg",
